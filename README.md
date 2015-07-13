@@ -1,11 +1,21 @@
-# web-boilerplate
+# Standard Project Boilerplate
+  
+  Grunt project template based of a number of resources. (Adding credits soon)
 
-Install Node.js and NPM
-Clone Repo
-npm install - to download project dependencies
+## Instructions 
+• install  node.js
 
-cd to folder
+• install npm
 
--type $ grunt for develompent
--type $ grunt deploy for production
+• Clone Repo
+
+• npm install - to download project dependencies
+
+• cd to folder
+
+• type $ grunt for dev (nothing minified or compressed)
+
+• type $ grunt deploy for production  (minified and imgs compressed)
+
+
 
