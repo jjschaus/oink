@@ -1,18 +1,18 @@
 # Standard Project Boilerplate
   
-  Grunt project template based off built from number of resources. *(Adding credits soon)
+  Grunt project template based off a from number of resources. *(Adding credits soon)
 
 ## Instructions 
-`• install  node.js`
+`* install  node.js`
 
-`• install npm`
+`* install npm`
 
-`• Clone Repo`
+`* Clone Repo`
 
-`• npm install - to download project dependencies`
+`npm install - to download project dependencies`
 
-`• cd to folder`
+`cd to folder`
 
-`• $ grunt for dev (nothing minified or compressed)`
+`$grunt for dev (nothing minified or compressed)`
 
-`• $ grunt deploy for production  (minified and imgs compressed)`
+`$grunt deploy for production  (minified and imgs compressed)`
