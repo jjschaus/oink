@@ -1,6 +1,6 @@
 # Standard Project Boilerplate
   
-  Grunt project template based off a from number of resources. *(Adding credits soon)
+  Grunt project template built from number of resources. *(Adding credits soon)
 
 ## Instructions 
 `* install  node.js`
