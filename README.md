@@ -18,4 +18,5 @@
 `$grunt deploy for production  (minified and imgs compressed)`
 
 Sass Example File Structure: http://www.sitepoint.com/architecture-sass-project/
+
 Make sass folder structure here: http://sassdirector.com/
