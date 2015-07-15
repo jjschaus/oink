@@ -17,4 +17,4 @@
 
 `$grunt deploy for production  (minified and imgs compressed)`
 
-Make sass folder structure here: http://una.im/sass-director/
+Make sass folder structure here: http://sassdirector.com/
