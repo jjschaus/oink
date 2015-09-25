@@ -1,7 +1,7 @@
 {
-  "name": "towson-u",
-  "version": "0.0.1",
-  "description": "Towson Rmail",
+  "name": "Oink",
+  "version": "0.0.2",
+  "description": "Project Boilerplate",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -24,11 +24,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Renegade Communications",
+  "author": "JJ SCHAUS",
   "license": "ISC",
   "main": "gruntfile.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/jjschaus/oink.git"
   }
 }
