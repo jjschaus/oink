@@ -5,9 +5,24 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+ banner: '/* <%= pkg.name %> - version <%= pkg.version %>\n' +
+          ' * <%= grunt.template.today("mm-dd-yyyy") %>\n' +
+          ' * <%= grunt.template.date("h:MM:ss TT") %>\n' +
+          ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n */\n',
+        usebanner: {
+            dist: {
+                options: {
+                    position: 'top',
+                    banner: '<%= banner %>'
+                },
+                files: {
+                    src: [ 'deploy/assets/css/main.css', 'deploy/assets/main-min.css']
+                }
+            }
+        },
     sass: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> - <%= grunt.template.date("h:MM:ss TT") %> */\n'
+        //banner: '/*! <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> - <%= grunt.template.date("h:MM:ss TT") %> */\n\n'
       },
       dist: {
         options: {
@@ -29,7 +44,7 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n\n'
       },
       dist: {
         files: {
@@ -69,14 +84,17 @@ module.exports = function(grunt) {
           }]
         }
     },
+
+
+ 
     watch: {
-      // compass: {
+      // compass: { 
       //   files: ['src/**/*.scss'],
       //  tasks: ['compass:dev']
       // },
       css: {
         files: ['src/**/*.scss'],
-        tasks: ['sass:dev']
+        tasks: ['sass:dev','usebanner']
         },
       scripts: {
         files: ['src/**/*.js'],
@@ -94,8 +112,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-banner');
+
   grunt.loadNpmTasks('grunt-includes');   
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('deploy', ['uglify:dist', 'sass:dist','imagemin']);
+  grunt.registerTask('deploy', ['uglify:dist','sass:dist','imagemin','usebanner']);
 
 };
