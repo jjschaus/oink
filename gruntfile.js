@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
- banner: '/* <%= pkg.name %> - version <%= pkg.version %>\n' +
+    banner: '/* <%= pkg.name %> - version <%= pkg.version %>\n' +
           ' * <%= grunt.template.today("mm-dd-yyyy") %>\n' +
           ' * <%= grunt.template.date("h:MM:ss TT") %>\n' +
           ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n */\n',
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         },
     sass: {
       options: {
-        //banner: '/*! <%= pkg.name %> <%= grunt.template.today("mm-dd-yyyy") %> - <%= grunt.template.date("h:MM:ss TT") %> */\n\n'
+      require: 'susy'
       },
       dist: {
         options: {
@@ -74,16 +74,16 @@ module.exports = function(grunt) {
       } //deploy  
     }, //includes
      
-    imagemin:{
-     dynamic: {                         // Another target 
-          files: [{
-            expand: true,                  // Enable dynamic expansion 
-            cwd: 'src/imgs/',                   // Src matches are relative to this path 
-            src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match 
-            dest: 'deploy/assets/imgs/'                  // Destination path prefix 
-          }]
-        }
-    },
+    // imagemin:{
+    //  dynamic: {                         // Another target 
+    //       files: [{
+    //         expand: true,                  // Enable dynamic expansion 
+    //         cwd: 'src/imgs/',                   // Src matches are relative to this path 
+    //         src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match 
+    //         dest: 'deploy/assets/imgs/'                  // Destination path prefix 
+    //       }]
+    //     }
+    // },
 
 
  
@@ -92,6 +92,9 @@ module.exports = function(grunt) {
       //   files: ['src/**/*.scss'],
       //  tasks: ['compass:dev']
       // },
+      options:{
+        livereload: true
+      },  
       css: {
         files: ['src/**/*.scss'],
         tasks: ['sass:dev','usebanner']
@@ -111,11 +114,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  //grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-includes');   
   grunt.loadNpmTasks('grunt-banner');
 
-  grunt.loadNpmTasks('grunt-includes');   
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('deploy', ['uglify:dist','sass:dist','imagemin','usebanner']);
+  grunt.registerTask('deploy', ['uglify:dist','sass:dist','usebanner']);
 
 };
