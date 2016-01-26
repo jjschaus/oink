@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     includes: {
       deploy: {
         cwd: 'src/pages',
-        src: ['*.html'],
+        src: ['*.html','*.php'],
         dest: './deploy/',
           options: {
             includePath: 'src/partials'
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
         tasks: ['uglify']
       },
       html: {
-        files: ['src/**/*.html'],
+        files: ['src/**/*.html','src/**/*.php' ],
         tasks: ['includes:deploy']
       }
     } // watch 
