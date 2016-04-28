@@ -84,9 +84,19 @@ module.exports = function(grunt) {
     //       }]
     //     }
     // },
-
-
- 
+             cachebreaker: {
+              dev: {
+                  options: {
+            match: [ 'main.css'],
+                      src: {
+                          path: 'deploy/assets/css/main.css'
+                      }
+                  },
+                  files: {
+                      src: ['src/partials/header.html']
+                  }
+              }
+          },
     watch: {
       // compass: { 
       //   files: ['src/**/*.scss'],
@@ -97,7 +107,7 @@ module.exports = function(grunt) {
       },  
       css: {
         files: ['src/**/*.scss'],
-        tasks: ['sass:dev','usebanner']
+        tasks: ['sass:dev','usebanner','cachebreaker']
         },
       scripts: {
         files: ['src/**/*.js'],
@@ -117,6 +127,7 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-includes');   
   grunt.loadNpmTasks('grunt-banner');
+grunt.loadNpmTasks('grunt-cache-breaker');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('deploy', ['uglify:dist','sass:dist','usebanner']);
