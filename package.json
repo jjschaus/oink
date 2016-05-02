@@ -3,17 +3,16 @@
   "version": "0.0.2",
   "description": "Project Boilerplate",
   "engines": {
-    "node": ">= 4.5.0"
+    "node": ">= 4.4.3"
   },
   "dependencies": {
     "grunt-cli": "*",
     "lodash": "^4.0.0"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.0",
     "grunt-banner": "^0.6.0",
     "grunt-cache-breaker": "^2.0.1",
-    "grunt-cachebuster": "^0.1.7",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-includes": "^1.0.0",
