@@ -26,7 +26,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    style: 'compressed'
+                    outputStyle: 'compressed'
                 },
                 files: {
                     'deploy/assets/css/main.css': 'src/scss/main.scss'
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
             },
             dev: {
                 options: {
-                    style: 'expanded'
+                    outputStyle: 'expanded'
                 },
                 files: {
                     'deploy/assets/css/main.css': 'src/scss/main.scss'
