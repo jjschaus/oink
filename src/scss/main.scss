@@ -1,23 +1,13 @@
-@import "vendors/bourbon/bourbon";
 
-@import "base/normalize";
+@import "grid/bootstrap";
 
 @import "helpers/variables";
 @import "helpers/mixins";
 
-@import "layout/skeleton";
 @import "layout/header";
 @import "layout/nav";
 @import "layout/footer";
 @import "layout/base";
-
-@import "components/flexslider";
-@import "components/tabs";
-@import "components/buttons";
-@import "components/fancybox-buttons";
-@import "components/fancybox";
-
-//@import "components/forms";
 
 @import "pages/home";
 

@@ -16,30 +16,30 @@ module.exports = function(grunt) {
                     banner: '<%= banner %>'
                 },
                 files: {
-                    src: ['deploy/assets/css/main.css', 'deploy/assets/main-min.css']
+                    src: ['public/assets/css/main.css']
                 }
             }
         },
         sass: {
             options: {
-                require: 'susy'
+                sourceMap: true
             },
             dist: {
                 options: {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    'deploy/assets/css/main.css': 'src/scss/main.scss'
-                }
-            },
-            dev: {
-                options: {
-                    outputStyle: 'expanded'
-                },
-                files: {
-                    'deploy/assets/css/main.css': 'src/scss/main.scss'
+                    'public/assets/css/main.css': 'src/scss/main.scss'
                 }
             }
+            // dev: {
+            //     options: {
+            //         outputStyle: 'compressed'
+            //     },
+            //     files: {
+            //         'public/assets/css/main.css': 'src/scss/main.scss'
+            //     }
+            // }
         },
 
         uglify: {
@@ -48,9 +48,12 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'deploy/assets/js/script.min.js': 'src/js/*.js'
+                    'public/assets/js/script.min.js': 'src/js/*.js'
                 }
+
+
             },
+
             dev: {
                 options: {
                     compress: false,
@@ -67,12 +70,16 @@ module.exports = function(grunt) {
             deploy: {
                 cwd: 'src/pages',
                 src: ['*.html', '*.php'],
-                dest: './deploy/',
+                dest: './public/',
                 options: {
                     includePath: 'src/partials'
                 }
-            } //deploy  
-        }, //includes
+            }, //deploy
+
+
+
+
+            }, //includes
 
         // imagemin:{
         //  dynamic: {                         // Another target 
@@ -85,46 +92,107 @@ module.exports = function(grunt) {
         //     }
         // },
         cachebreaker: {
-            dev: {
+            css: {
                 options: {
-                    match: ['main.css'],
+                    match: ['/*.css'],
                     src: {
-                        path: 'deploy/assets/css/main.css'
-                    }
+                        path: 'public/assets/**/*.css'
+
+                    },
                 },
                 files: {
-                    src: ['src/partials/header.html']
+                    src: ['src/partials/**/*.html', 'src/pages/**/*.html']
+                }
+            },
+            scripts: {
+                options: {
+                    match: ['/*.js'],
+                    src: {
+                        path: 'public/assets/js/**/*.js'
+
+                    },
+                },
+                files: {
+                    src: ['src/partials/**/*.php', 'src/pages/**/*.php']
+                }
+            },
+            imgs: {
+                options: {
+                    match: ['/*.svg', '/*.png', '/*.jpg'],
+                    src: {
+                        path: 'public/assets/imgs/**/*'
+
+                    },
+                },
+                files: {
+                    src: ['src/**/*.html', 'src/pages/**/*.html']
+                }
+            },
+
+            pdfs: {
+                options: {
+                    match: ['/*.pdf'],
+                    src: {
+                        path: 'public/pdfs/**/*.pdf'
+
+                    },
+                },
+                files: {
+
+                    src: ['src/partials/**/*.php', 'src/pages/**/*.php']
+
                 }
             }
         },
+
         watch: {
-            // compass: { 
-            //   files: ['src/**/*.scss'],
-            //  tasks: ['compass:dev']
-            // },
             options: {
-                livereload: true
+                livereload: false
             },
             css: {
                 files: ['src/**/*.scss'],
-                tasks: ['sass:dev', 'usebanner', 'cachebreaker']
+                tasks: ['sass:dist', 'usebanner']
             },
             scripts: {
                 files: ['src/**/*.js'],
                 tasks: ['uglify']
             },
+            // imgs: {
+            //     files: ['public/assets/**/*'],
+            //     tasks: ['uglify', 'cachebreaker:imgs']
+
+            // },
+
+
+            pdfs: {
+                files: ['public/assets/pdfs/**/*.pdf'],
+                tasks: ['uglify']
+            },
+
             html: {
                 files: ['src/**/*.html', 'src/**/*.php'],
                 tasks: ['includes:deploy']
+
             }
         } // watch 
     }); // grunt.initConfig
-
-    // grunt.loadNpmTasks('grunt-contrib-compass');
+    const imagemin = require('imagemin');
+    const imageminJpegtran = require('imagemin-jpegtran');
+    const imageminPngquant = require('imagemin-pngquant');
+    const imageminSvgo = require('imagemin-svgo');
+    imagemin(['src/imgs/**/*.{jpg,png,svg}'], 'public/assets/imgs', {
+        plugins: [
+            imageminJpegtran(),
+            imageminSvgo({ removeViewBox: false }),
+            imageminPngquant({ quality: '65-80' })
+        ],
+    }).then(files => {
+        console.log('Images optimized');
+        //=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg'}, …]
+    });
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    //grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-includes');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-cache-breaker');
