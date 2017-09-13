@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                     mangle: false
                 },
                 files: {
-                    'deploy/assets/js/script.min.js': 'src/js/*.js'
+                    'public/assets/js/script.min.js': 'src/js/*.js'
                 }
             }
         },
