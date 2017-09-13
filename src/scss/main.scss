@@ -1,15 +1,4 @@
-
-@import "grid/bootstrap";
-
-@import "helpers/variables";
-@import "helpers/mixins";
-
-@import "layout/header";
-@import "layout/nav";
-@import "layout/footer";
-@import "layout/base";
-
-@import "pages/home";
-
-
-
+@import "bootstrap/bootstrap";
+@import "helpers/animation";
+@import "theme/carousel";
+@import "theme/creative";

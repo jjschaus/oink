@@ -1,0 +1,389 @@
+// // Global styling for this template
+// body,
+// html {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// body {
+//   @include serif-font;
+// }
+
+// hr {
+//   max-width: 50px;
+//   border-width: 3px;
+//   border-color: $theme-primary;
+// }
+
+// hr.light {
+//   border-color: white;
+// }
+
+// a {
+//   color: $theme-primary;
+//   @include transition-all;
+//   &:focus,
+//   &:hover {
+//     color: darken($theme-primary, .1);
+//   }
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   @include sans-serif-font;
+// }
+
+h1 {
+    font-family: 'Calibri W01 Bold_904607' !important;
+}
+h3 {
+font-family:'Calibri W01 Light';
+}
+h2 {
+font-family:'Calibri W01 Light';
+}
+
+footer {
+    background-color: #292b2c; //width: 100%;
+}
+.footer {
+    background-color: #292b2c;
+    padding: 1em 0em; //width: 100%;
+}
+/* GLOBAL STYLES
+-------------------------------------------------- */
+
+
+/* Padding below the footer and lighter body text */
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 260px;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    //  width: 100%;
+        background: #292b2c; // width:100%;
+  color: #f5f5f5;
+
+    /* Set the fixed height of the footer here */
+    height: 260px;
+   // background-color: #f5f5f5;
+}
+
+.footer-logo {
+
+    margin: 5px 0 18px 0;
+    @include clearfix;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+
+/* Not required for template or sticky footer method. */
+
+body>.container {
+   // padding: 260px 15px 0;
+}
+
+.container .text-muted {
+ //   margin: 20px 0;
+}
+
+// .footer>.container {
+//     padding-right: 15px;
+//     padding-left: 15px;
+// }
+
+
+
+body {
+    color: #5a5a5a;
+    font-family: 'Calibri W01 Regular_904604' ;
+}
+
+
+.footer-nav {
+    text-align: center;
+
+    padding: 0px;
+    margin: 0px;
+    & li {
+        display: inline-block;
+
+        padding: 0px;
+        margin: 0px;
+        a {
+
+        }
+    }
+}
+.home-title {
+  h1{
+    margin-top: 20%;
+  }
+}
+
+.footer {
+    .navbar-brand {
+        float: left;
+
+        width: 100px;
+        img {
+            display: block;
+        }
+    }
+}
+.footer-social {
+    position: absolute;
+    right: 0;
+}
+
+
+.footer-social-icon-list {
+    margin: 0px;
+    padding: 0px;
+    list-style: none; //border: 1px solid red;
+    text-align: right;
+    & a {
+        color: #666;
+        font-size: 1em;
+        height: 28px;
+        width: 28px;
+        //background: rgba(255, 255, 255, .1);
+        display: inline-block;
+        margin-right: 10px;
+        padding-top: 3px;
+    }
+    li {
+        display: inline-block;
+        margin-right: 10px;
+
+        text-align: center;
+        padding: 0px; //border: 1px solid yellow;
+    }
+}
+
+p {
+  font-size: 19px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+// .bg-primary {
+//   background-color: $theme-primary !important;
+// }
+
+// .bg-dark {
+//   color: white;
+//   background-color: $gray-darker !important;
+// }
+
+// .text-faded {
+//   color: fade-out(white, .3);
+// }
+
+// section {
+//   padding: 100px 0;
+// }
+
+// .section-heading {
+//   margin-top: 0;
+// }
+
+// ::-moz-selection {
+//   color: white;
+//   background: $gray-darker;
+//   text-shadow: none;
+// }
+
+// ::selection {
+//   color: white;
+//   background: $gray-darker;
+//   text-shadow: none;
+// }
+
+// img::selection {
+//   color: white;
+//   background: transparent;
+// }
+
+// img::-moz-selection {
+//   color: white;
+//   background: transparent;
+// }
+
+body {
+  -webkit-tap-highlight-color: $gray-darker;
+}
+.footer-form{
+  &:after{
+    content: '\f1d8';
+    font-family: 'fontAwesome';
+    width: 40px;
+    height: 40px;
+    position: absolute; 
+    right: -10px;
+    top: 0px;
+  }
+}
+/*
+ * Header
+ */
+.footer-form input{
+  background: transparent;
+  border: 1px solid #444;
+}
+.footer-form{
+  position: absolute;
+  right: 0;
+  top: 60px;
+}
+.masthead {
+
+    margin-bottom: 2rem;
+}
+
+.masthead-brand {
+    margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+    /*  padding: .25rem 0;
+  font-weight: bold;
+  color: rgba(255,255,255,.5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;*/
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+    /*  border-bottom-color: rgba(255,255,255,.25);
+*/
+}
+
+.nav-masthead .nav-link+.nav-link {
+    margin-left: 1rem;
+}
+
+.nav-masthead .active {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+.home-logos > div > div {
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: 110px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.home-logos > div > div img {
+    padding: 10px;
+    display: flex;
+    max-width: 70%;
+    max-height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    padding: 10px auto
+}
+
+@media (min-width: 48em) {
+    .masthead-brand {
+        float: left;
+    }
+    .nav-masthead {
+        float: right;
+    }
+}
+
+
+
+/*
+ * Cover
+ */
+
+.cover {
+    padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+    padding: .75rem 1.25rem;
+    font-weight: bold;
+}
+
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+    /*  color: rgba(255,255,255,.5);
+*/
+}
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+
+.site-wrapper {
+
+    display: table;
+    width: 100%;
+    height: 100%;
+    /* For at least Firefox */
+    min-height: 100%;
+    /*-webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);*/
+}
+
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('assets/video/renegadecommunications-bg.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+.stopfade {
+    opacity: .5;
+}
+
+
+
