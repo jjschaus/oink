@@ -6,22 +6,25 @@
     "node": ">= 8.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.1",
     "grunt-banner": "^0.6.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "imagemin": "^5.3.1",
-    "imagemin-jpegtran": "^5.0.2",
-    "imagemin-pngquant": "^5.0.1",
-    "imagemin-svgo": "^6.0.0"
+    "grunt-contrib-concat": "^1.0.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@vue/test-utils": "^1.0.0-beta.16",
+    "bootstrap": "^4.1.1",
+    "bootstrap-sass": "*",
     "grunt": "^1.0.2",
     "grunt-cache-breaker": "^2.0.1",
     "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-includes": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-includes": "^1.1.0",
     "grunt-sass": "^2.1.0"
   },
   "scripts": {

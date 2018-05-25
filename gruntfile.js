@@ -176,20 +176,20 @@ module.exports = function(grunt) {
             }
         } // watch 
     }); // grunt.initConfig
-    const imagemin = require('imagemin');
-    const imageminJpegtran = require('imagemin-jpegtran');
-    const imageminPngquant = require('imagemin-pngquant');
-    const imageminSvgo = require('imagemin-svgo');
-    imagemin(['src/imgs/**/*.{jpg,png,svg}'], 'public/assets/imgs', {
-        plugins: [
-            imageminJpegtran(),
-            imageminSvgo({ removeViewBox: false }),
-            imageminPngquant({ quality: '65-80' })
-        ],
-    }).then(files => {
-        console.log('Images optimized');
-        //=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg'}, …]
-    });
+    // const imagemin = require('imagemin');
+    // const imageminJpegtran = require('imagemin-jpegtran');
+    // const imageminPngquant = require('imagemin-pngquant');
+    // const imageminSvgo = require('imagemin-svgo');
+    // imagemin(['src/imgs/**/*.{jpg,png,svg}'], 'public/assets/imgs', {
+    //     plugins: [
+    //         imageminJpegtran(),
+    //         imageminSvgo({ removeViewBox: false }),
+    //         imageminPngquant({ quality: '65-80' })
+    //     ],
+    // }).then(files => {
+    //     console.log('Images optimized');
+    //     //=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg'}, …]
+    // });
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
