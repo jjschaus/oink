@@ -10,7 +10,8 @@
     "grunt-banner": "^0.6.0",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-concat": "^1.0.1"
+    "grunt-contrib-concat": "^1.0.1",
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
     "bootstrap": "^4.1.1",
@@ -21,8 +22,9 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-includes": "^1.1.0",
     "grunt-sass": "^2.1.0",
-    "jquery": "^1.9.1",
-    "popper.js": "^1.14.3"
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "lodash": "^4.17.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
